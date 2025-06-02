@@ -1,6 +1,3 @@
-## Author: UTENTE <UTENTE@LAPTOP-BQBHR837>
-## Created: 2025-05-02
-
 function [xi, i, imax] = bisezione(fun, a, b, tol)
   % BISEZIONE Implementa il metodo di bisezione per trovare una radice di f(x) = 0.
   %
@@ -44,8 +41,8 @@ function [xi, i, imax] = bisezione(fun, a, b, tol)
       fa = fxi;
     end
 
-    % Aggiungi un controllo per evitare loop infiniti (opzionale ma consigliato)
-    if i > imax * 2 % Un multiplo ragionevole di imax
+    % Controllo opzionale per evitare loop infiniti
+    if i > imax * 2 % Scelgo un multiplo ragionevole di imax
       warning('Raggiunto un numero elevato di iterazioni senza convergenza alla tolleranza richiesta.');
       return;
     end
