@@ -1,0 +1,11 @@
+f = @(x) x^2 -2;
+
+a = 0;
+b = 2;
+tol = 1e-2;
+
+[xi, iter, imax] = bisezione(f, a, b, tol);
+
+disp(['Radice approssimata: ', num2str(xi)]);
+disp(['Iterazioni esguite: ', num2str(iter)]);
+disp(['Numero massimo teorico di iterazioni: ', num2str(imax)]);

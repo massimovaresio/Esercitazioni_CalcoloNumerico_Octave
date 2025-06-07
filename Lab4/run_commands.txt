@@ -1,0 +1,10 @@
+f = @(x) x^2 -2;
+df = @(x) 2*x;
+x0 = 2;
+tol = 1e-6;
+nmax = 20;
+
+[x, iter] = newton(f, df, x0, tol, nmax);
+
+disp(['Radice approssimata: ', num2str(x)]);
+disp(['Iterazioni eseguite: ', num2str(iter)]);
