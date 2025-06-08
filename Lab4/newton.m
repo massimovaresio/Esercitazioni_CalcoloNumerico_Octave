@@ -23,10 +23,10 @@ function [x, i] = newton(f, df, x0, tol, nmax)
 
     % Controllo di arresto
     if abs(x_new - x) < tol
-      x = x_new;
-      return;
+      x = x_new; % Se la condizione if è vera aggiorno x un'ultima volta
+      return; % Esco dalla funzione
     end
 
-    x = x_new;
+    x = x_new; % Se non ho raggiunto la tolleranza, preparo il prossimo ciclo
   end
 end

@@ -1,0 +1,7 @@
+| Caratteristica        | Script                  | Function                        |
+| --------------------- | ----------------------- | ------------------------------- |
+| Input/output          | Nessuno                 | Espliciti (`function y = f(x)`) |
+| Scope delle variabili | Condivide con workspace | Locale alla funzione            |
+| Utilizzo              | Test, automazione       | Algoritmi riutilizzabili        |
+| Visibilità variabili  | Visibili fuori          | Invisibili fuori                |
+| Inizio del file       | Comandi diretti         | Deve iniziare con `function`    |
