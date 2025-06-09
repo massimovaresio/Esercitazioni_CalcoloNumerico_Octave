@@ -1,0 +1,14 @@
+A = [-1  1 2;
+      1  0 1;
+     -2  1 3];
+
+[L, U, success] = fattorizzazione_LU(A);
+
+if success
+  fprintf('\nVerifica A = L * U:\n');
+  disp(L * U);
+else
+  fprintf('\nFattorizzazione fallita.\n');
+end
+
+
