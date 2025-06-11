@@ -27,9 +27,7 @@ function [L, U, success] = fattorizzazione_LU(A)
     fprintf('\n Eliminazione colonna %d (pivot = A(%d,%d) = %.2f)\n', i, i, i, A(i,i));
 
     if A(i,i) == 0
-      warning('Pivot nullo alla riga %d. Impossibile procedere.', i);
-      success = false;
-      return;
+      error('Pivot nullo alla riga %d. Impossibile procedere.', i);
     end
 
     for s = i+1:n

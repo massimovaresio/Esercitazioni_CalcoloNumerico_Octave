@@ -1,6 +1,7 @@
-A = [-1  1 2;
-      1  0 1;
-     -2  1 3];
+A = [1 2 3 0;
+     2 5 7 0;
+     3 7 10 1
+     1 1 1 1];
 
 try
   [L, U, success] = fattorizzazione_LU(A);
@@ -9,4 +10,6 @@ try
 catch ME
   fprintf('\nFattorizzazione fallita: %s\n', ME.message);
 end
+
+
 
