@@ -28,3 +28,20 @@ function x = sostituzione_indietro(A, b)
     x(i) = (b(i) - somma) / A(i,i);
   end
 end
+
+% VERSIONE ALTERNATIVA CON PRODOTTI ELEMENTO*ELEMENTO
+% risulta più compatta e sfrutta le operazioni vettoriali invece di for annidati
+
+##  for i = n:-1:1
+##    % Estrai la parte della riga A(i,:) che va da j = i+1 a n
+##    % e i corrispondenti valori x(j) già calcolati
+##    if i < n
+##      prodotti = A(i, i+1:n) .* x(i+1:n) ;  % prodotto elemento per elemento
+##      somma = sum(prodotti);               % somma dei prodotti
+##    else
+##      somma = 0;  % ultimo elemento non ha nulla a destra
+##    end
+##
+##    % Calcolo x(i)
+##    x(i) = (b(i) - somma) / A(i,i);
+##  end

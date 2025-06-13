@@ -57,3 +57,39 @@ function [L, U, success] = fattorizzazione_LU(A)
   fprintf('Matrice U:\n');
   disp(U);
 end
+
+
+% VERSIONE ALTERNATIVA PER RIDURRE L'USO DEI CICLI FOR
+
+##  [n, m] = size(A);
+##  if n ~= m
+##    error('La matrice A deve essere quadrata.');
+##  end
+##
+##  L = eye(n);  % Inizializzazione matrice L
+##
+##  fprintf('\nInizio fattorizzazione LU della matrice A:\n');
+##  disp(A);
+##
+##  for i = 1:n-1
+##    pivot = A(i,i);
+##    fprintf('\nEliminazione colonna %d (pivot = A(%d,%d) = %.2f)\n', i, i, i, pivot);
+##
+##    if pivot == 0
+##      error('Pivot nullo alla riga %d. Impossibile procedere.', i);
+##    end
+##
+##    g = A(i+1:n, i) / pivot;       % Vettore dei moltiplicatori (divisione per scalare)
+##    L(i+1:n, i) = g;               % Salvo i moltiplicatori in L
+##
+##    % Aggiornamento vettoriale riga per riga
+##    A(i+1:n, i+1:n) = A(i+1:n, i+1:n) - g * A(i, i+1:n);  % Aggiornamento delle sottorighe
+##    A(i+1:n, i) = 0;  % Azzero la colonna sotto il pivot
+##  end
+##
+##  U = triu(A);  % Estrazione triangolare superiore
+##
+##  fprintf('\nFattorizzazione completata.\n\nMatrice L:\n');
+##  disp(L);
+##  fprintf('Matrice U:\n');
+##  disp(U);
