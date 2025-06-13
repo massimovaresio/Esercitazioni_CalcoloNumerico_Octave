@@ -1,0 +1,9 @@
+f = @(x) (16 * x.^3) ./ (1 + 4 * x.^4); % Potenza x.^3 element-wise calcola ogni elemento del vettore x elevato a potenza
+a = 1;
+b = 3;
+m = 32;
+
+J = trapezi(f, a, b, m);
+
+fprintf('Approssimazione del integrale: %.4f\n', J)
+
