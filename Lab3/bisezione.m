@@ -52,3 +52,35 @@ function [xi, i, imax] = bisezione(fun, a, b, tol)
   xi = (a + b) / 2;
 
 end
+
+
+
+% VERSIONE ALTERNATIVA CON CICLO FOR
+
+##function [xi, i, imax] = bisezione(fun, a, b, tol)
+##  if fun(a) * fun(b) > 0
+##    error('L''intervallo iniziale [a, b] non contiene un cambio di segno.');
+##  end
+##
+##  imax = ceil(log2((b - a) / tol));
+##  fa = fun(a);
+##  fb = fun(b);
+##
+##  for i = 1:imax
+##    xi = (a + b) / 2;
+##    fxi = fun(xi);
+##
+##    if fxi == 0
+##      return; % radice esatta trovata
+##    elseif fa * fxi < 0
+##      b = xi;
+##      fb = fxi;
+##    else
+##      a = xi;
+##      fa = fxi;
+##    end
+##  end
+##
+##  % Dopo imax iterazioni, xi è una buona approssimazione
+##  xi = (a + b) / 2;
+##end
